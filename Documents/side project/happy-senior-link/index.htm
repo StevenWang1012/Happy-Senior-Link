@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <!-- 禁止縮放，確保 App 質感體驗 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>樂齡智享</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 引入 Google Fonts Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 頂部導航 (Sticky Header) -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">樂齡智享</div>
+            <!-- 搜尋按鈕 (裝飾用，未來可實作) -->
+            <button class="icon-btn">🔍</button>
+        </div>
+        
+        <!-- 分類標籤 -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="switchCategory('all')">推薦</button>
+            <button class="tab-btn" onclick="switchCategory('local')">本地</button>
+            <button class="tab-btn" onclick="switchCategory('china')">漫遊</button>
+            <button class="tab-btn" onclick="switchCategory('health')">健康</button>
+        </nav>
+    </header>
+
+    <!-- 內容列表容器 -->
+    <main id="feed-container" class="feed-container">
+        <!-- 骨架屏 (Skeleton) - 在 JS 載入前預設顯示 -->
+        <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-text title"></div>
+                <div class="skeleton-text line"></div>
+                <div class="skeleton-text line short"></div>
+            </div>
+        </div>
+        <div class="skeleton-card">
+            <div class="skeleton-image"></div>
+            <div class="skeleton-content">
+                <div class="skeleton-text title"></div>
+                <div class="skeleton-text line"></div>
+                <div class="skeleton-text line short"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部固定導航 (Fixed Footer / Tab Bar) -->
+    <nav class="bottom-nav">
+        <button class="nav-item active" onclick="location.reload()">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">首頁</span>
+        </button>
+        
+        <button class="nav-item" onclick="alert('收藏功能開發中！')">
+            <span class="nav-icon">⭐</span>
+            <span class="nav-label">收藏</span>
+        </button>
+
+        <!-- 中央突出發布按鈕 -->
+        <div class="nav-item-center">
+            <button class="post-btn" onclick="alert('請使用 LINE Bot 分享！')">
+                <span class="plus-icon">＋</span>
+            </button>
+            <span class="nav-label">分享</span>
+        </div>
+
+        <button class="nav-item" onclick="alert('大陸漫遊專區準備中')">
+            <span class="nav-icon">🌏</span>
+            <span class="nav-label">漫遊</span>
+        </button>
+
+        <button class="nav-item" onclick="alert('個人中心開發中')">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">我的</span>
+        </button>
+    </nav>
+
+    <script src="main.js"></script>
+</body>
+</html>
