@@ -2,6 +2,7 @@
 var supabase; 
 
 (function() {
+    // 您之前提供的金鑰與網址保持不變
     const SUPABASE_URL = 'https://zeffbuvdbytfkdeopcry.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplZmZidXZkYnl0ZmtkZW9wY3J5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMzI2MTUsImV4cCI6MjA4MTYwODYxNX0.Wv0EFCYfYmrYoud8KxVD6fOQtOnBaRM9FE4h66eTqkk';
 
@@ -104,19 +105,10 @@ var supabase;
         });
     }
 
-    // 點讚互動模擬 (不涉及資料庫更新，純前端視覺)
     window.handleLike = function(btn, id) {
         const heart = btn.querySelector('.heart');
-        if (heart.innerText === '♡') {
-            heart.innerText = '❤️';
-            heart.style.color = '#E64134';
-            btn.style.color = '#E64134';
-            // 這裡可以加入 API 呼叫更新 Supabase
-        } else {
-            heart.innerText = '♡';
-            heart.style.color = '#666';
-            btn.style.color = '#666';
-        }
+        if (heart.innerText === '♡') { heart.innerText = '❤️'; heart.style.color = '#E64134'; btn.style.color = '#E64134';
+        } else { heart.innerText = '♡'; heart.style.color = '#666'; btn.style.color = '#666'; }
     };
 
     function escapeHtml(text) {
